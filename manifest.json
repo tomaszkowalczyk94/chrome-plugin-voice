@@ -1,0 +1,27 @@
+{
+  "name": "chrome-plugin-voice",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab", "tts"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["voice.js"]
+    }
+  ],
+  "commands": {
+    "toggle-voice": {
+      "suggested_key": {
+        "default": "Alt+Shift+D"
+      },
+      "description": "Toggle voice"
+    }
+  },
+  "manifest_version": 2
+}
