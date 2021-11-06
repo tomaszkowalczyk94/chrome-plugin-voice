@@ -6,8 +6,14 @@ chrome.runtime.onMessage.addListener(
     });
 
 
+
+
 function selectSentence() {
-    let selection = window.getSelection();
-    selection.modify('extend', 'forward', 'sentence');
-    return window.getSelection().toString();
+	let selectedText = window.getSelection().toString()
+	
+	if(selectedText.length > 0) {
+		    let selection = window.getSelection();
+			selection.modify('extend', 'forward', 'sentence');
+			return window.getSelection().toString();
+	}
 }

@@ -19,11 +19,14 @@ chrome.runtime.onMessage.addListener(
         //             console.log('  event types: ' + voices[i].eventTypes);
         //         }
         //     });
+		
 
         console.log(request);
+		chrome.tts.stop();
         chrome.tts.speak(request.text, {
             'lang': 'en-UK',
             'voiceName' : 'Google UK English Male',
-            'rate': 0.8
+            'rate': 1.0
         });
     });
+	
